@@ -1,0 +1,2197 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.81 build 7503 
+                                                                                               Tue Sep 24 05:06:35 2019
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 7503
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 7503"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 11 "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 11 "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+    45  2007  1F7A               	dw 0X1F7A ;#
+    46                           	FNCALL	_main,_character
+    47                           	FNCALL	_main,_cmd
+    48                           	FNCALL	_main,_data
+    49                           	FNCALL	_main,_jump
+    50                           	FNCALL	_main,_score
+    51                           	FNCALL	_main,_stop
+    52                           	FNCALL	_main,_main
+    53                           	FNCALL	_score,_cmd
+    54                           	FNCALL	_score,_data
+    55                           	FNCALL	_score,_jump
+    56                           	FNCALL	_stop,_cmd
+    57                           	FNCALL	_stop,_data
+    58                           	FNCALL	_jump,_cmd
+    59                           	FNCALL	_jump,_data
+    60                           	FNCALL	_character,_cmd
+    61                           	FNCALL	_character,_data
+    62                           	FNROOT	_main
+    63                           	global	main@F1103
+    64                           	global	main@F1105
+    65                           	global	main@F1107
+    66                           psect	idataBANK0,class=CODE,space=0,delta=2
+    67                           global __pidataBANK0
+    68  04C1                     __pidataBANK0:
+    69                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+    70                           	line	43
+    71                           
+    72                           ;initializer for main@F1103
+    73  04C1  3403               	retlw	03h
+    74  04C2  3402               	retlw	02h
+    75  04C3  3413               	retlw	013h
+    76  04C4  3416               	retlw	016h
+    77  04C5  341F               	retlw	01Fh
+    78  04C6  340E               	retlw	0Eh
+    79  04C7  340A               	retlw	0Ah
+    80  04C8  340A               	retlw	0Ah
+    81                           	line	45
+    82                           
+    83                           ;initializer for main@F1105
+    84  04C9  340E               	retlw	0Eh
+    85  04CA  340E               	retlw	0Eh
+    86  04CB  3404               	retlw	04h
+    87  04CC  341E               	retlw	01Eh
+    88  04CD  3404               	retlw	04h
+    89  04CE  3404               	retlw	04h
+    90  04CF  341E               	retlw	01Eh
+    91  04D0  3400               	retlw	0
+    92                           	line	47
+    93                           
+    94                           ;initializer for main@F1107
+    95  04D1  3414               	retlw	014h
+    96  04D2  3414               	retlw	014h
+    97  04D3  3415               	retlw	015h
+    98  04D4  3415               	retlw	015h
+    99  04D5  341D               	retlw	01Dh
+   100  04D6  3406               	retlw	06h
+   101  04D7  3404               	retlw	04h
+   102  04D8  341F               	retlw	01Fh
+   103                           	global	main@F1109
+   104                           	global	_c
+   105                           	global	_i
+   106                           	global	_k
+   107                           	global	_PORTD
+   108  0008                     _PORTD	set	8
+   109                           	global	_RC0
+   110  0038                     _RC0	set	56
+   111                           	global	_RC1
+   112  0039                     _RC1	set	57
+   113                           	global	_RC2
+   114  003A                     _RC2	set	58
+   115                           	global	_RC3
+   116  003B                     _RC3	set	59
+   117                           	global	_TRISC
+   118  0087                     _TRISC	set	135
+   119                           	global	_TRISD
+   120  0088                     _TRISD	set	136
+   121                           	global	_TRISC3
+   122  043B                     _TRISC3	set	1083
+   123                           psect	strings,class=STRING,delta=2
+   124                           global __pstrings
+   125  0003                     __pstrings:
+   126                           ;	global	stringdir,stringtab,__stringbase
+   127  0003                     stringtab:
+   128                           ;	String table - string pointers are 1 byte each
+   129  0003                     stringcode:stringdir:
+      + 0003                     stringdir:	
+   130  0003  3000               movlw high(stringdir)
+   131  0004  008A               movwf pclath
+   132  0005  0804               movf fsr,w
+   133  0006  0A84               incf fsr
+   134  0007  0782               	addwf pc
+   135  0008                     __stringbase:
+   136  0008  3400               	retlw	0
+   137                           psect	strings
+   138                           	
+   139  0009                     STR_1:	
+   140  0009  3430               	retlw	48	;'0'
+   141  000A  3431               	retlw	49	;'1'
+   142  000B  3432               	retlw	50	;'2'
+   143  000C  3433               	retlw	51	;'3'
+   144  000D  3434               	retlw	52	;'4'
+   145  000E  3435               	retlw	53	;'5'
+   146  000F  3436               	retlw	54	;'6'
+   147  0010  3437               	retlw	55	;'7'
+   148  0011  3438               	retlw	56	;'8'
+   149  0012  3439               	retlw	57	;'9'
+   150  0013  3400               	retlw	0
+   151                           psect	strings
+   152                           	
+   153  0014                     STR_3:	
+   154  0014  3447               	retlw	71	;'G'
+   155  0015  3441               	retlw	65	;'A'
+   156  0016  344D               	retlw	77	;'M'
+   157  0017  3445               	retlw	69	;'E'
+   158  0018  3420               	retlw	32	;' '
+   159  0019  344F               	retlw	79	;'O'
+   160  001A  3456               	retlw	86	;'V'
+   161  001B  3445               	retlw	69	;'E'
+   162  001C  3452               	retlw	82	;'R'
+   163  001D  3400               	retlw	0
+   164                           psect	strings
+   165                           	
+   166  001E                     STR_2:	
+   167  001E  3473               	retlw	115	;'s'
+   168  001F  3463               	retlw	99	;'c'
+   169  0020  346F               	retlw	111	;'o'
+   170  0021  3472               	retlw	114	;'r'
+   171  0022  3465               	retlw	101	;'e'
+   172  0023  3420               	retlw	32	;' '
+   173  0024  343A               	retlw	58	;':'
+   174  0025  3420               	retlw	32	;' '
+   175  0026  3400               	retlw	0
+   176                           psect	strings
+   177                           	file	"dinogame.as"
+   178                           	line	#
+   179                           psect cinit,class=CODE,delta=2
+   180                           global start_initialization
+   181  04D9                     start_initialization:
+   182                           
+   183                           psect	bssBANK0,class=BANK0,space=1
+   184                           global __pbssBANK0
+   185  005E                     __pbssBANK0:
+   186  005E                     main@F1109:
+   187  005E                            ds      8
+   188                           
+   189  0066                     _c:
+   190  0066                            ds      2
+   191                           
+   192  0068                     _i:
+   193  0068                            ds      2
+   194                           
+   195  006A                     _k:
+   196  006A                            ds      2
+   197                           
+   198                           psect	dataBANK0,class=BANK0,space=1
+   199                           global __pdataBANK0
+   200  0046                     __pdataBANK0:
+   201                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+   202                           	line	43
+   203  0046                     main@F1103:
+   204  0046                            ds      8
+   205                           
+   206                           psect	dataBANK0
+   207                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+   208                           	line	45
+   209  004E                     main@F1105:
+   210  004E                            ds      8
+   211                           
+   212                           psect	dataBANK0
+   213                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+   214                           	line	47
+   215  0056                     main@F1107:
+   216  0056                            ds      8
+   217                           
+   218                           ; Clear objects allocated to BANK0
+   219                           psect cinit,class=CODE,delta=2
+   220  04D9  01DE               	clrf	((__pbssBANK0)+0)&07Fh
+   221  04DA  01DF               	clrf	((__pbssBANK0)+1)&07Fh
+   222  04DB  01E0               	clrf	((__pbssBANK0)+2)&07Fh
+   223  04DC  01E1               	clrf	((__pbssBANK0)+3)&07Fh
+   224  04DD  01E2               	clrf	((__pbssBANK0)+4)&07Fh
+   225  04DE  01E3               	clrf	((__pbssBANK0)+5)&07Fh
+   226  04DF  01E4               	clrf	((__pbssBANK0)+6)&07Fh
+   227  04E0  01E5               	clrf	((__pbssBANK0)+7)&07Fh
+   228  04E1  01E6               	clrf	((__pbssBANK0)+8)&07Fh
+   229  04E2  01E7               	clrf	((__pbssBANK0)+9)&07Fh
+   230  04E3  01E8               	clrf	((__pbssBANK0)+10)&07Fh
+   231  04E4  01E9               	clrf	((__pbssBANK0)+11)&07Fh
+   232  04E5  01EA               	clrf	((__pbssBANK0)+12)&07Fh
+   233  04E6  01EB               	clrf	((__pbssBANK0)+13)&07Fh
+   234                           global btemp
+   235                           psect inittext,class=CODE,delta=2
+   236                           global init_fetch,btemp
+   237                           ;	Called with low address in FSR and high address in W
+   238  0486                     init_fetch:
+   239  0486  087E               	movf btemp,w
+   240  0487  008A               	movwf pclath
+   241  0488  087F               	movf btemp+1,w
+   242  0489  0082               	movwf pc
+   243                           global init_ram
+   244                           ;Called with:
+   245                           ;	high address of idata address in btemp 
+   246                           ;	low address of idata address in btemp+1 
+   247                           ;	low address of data in FSR
+   248                           ;	high address + 1 of data in btemp-1
+   249  048A                     init_ram:
+   250  048A  2486  120A  118A   	fcall init_fetch
+   251  048D  0080               	movwf indf,f
+   252  048E  0A84               	incf fsr,f
+   253  048F  0804               	movf fsr,w
+   254  0490  067D               	xorwf btemp-1,w
+   255  0491  1903               	btfsc status,2
+   256  0492  3400               	retlw 0
+   257  0493  0AFF               	incf btemp+1,f
+   258  0494  1903               	btfsc status,2
+   259  0495  0AFE               	incf btemp,f
+   260  0496  2C8A               	goto init_ram
+   261                           ; Initialize objects allocated to BANK0
+   262                           psect cinit,class=CODE,delta=2
+   263                           global init_ram, __pidataBANK0
+   264  04E7  1383               	bcf	status, 7	;select IRP bank0
+   265  04E8  305E               	movlw low(__pdataBANK0+24)
+   266  04E9  00FD               	movwf btemp-1,f
+   267  04EA  3004               	movlw high(__pidataBANK0)
+   268  04EB  00FE               	movwf btemp,f
+   269  04EC  30C1               	movlw low(__pidataBANK0)
+   270  04ED  00FF               	movwf btemp+1,f
+   271  04EE  3046               	movlw low(__pdataBANK0)
+   272  04EF  0084               	movwf fsr,f
+   273  04F0  120A  118A  248A   	fcall init_ram
+              120A  118A         
+   274                           psect cinit,class=CODE,delta=2
+   275                           global end_of_initialization
+   276                           
+   277                           ;End of C runtime variable initialization code
+   278                           
+   279  04F5                     end_of_initialization:
+   280  04F5  0183               clrf status
+   281  04F6  120A  118A  2E8E   ljmp _main	;jump to C main() function
+   282                           psect	cstackCOMMON,class=COMMON,space=1
+   283                           global __pcstackCOMMON
+   284  0070                     __pcstackCOMMON:
+   285                           	global	?_score
+   286  0070                     ?_score:	; 0 bytes @ 0x0
+   287                           	global	?_stop
+   288  0070                     ?_stop:	; 0 bytes @ 0x0
+   289                           	global	?_cmd
+   290  0070                     ?_cmd:	; 0 bytes @ 0x0
+   291                           	global	??_cmd
+   292  0070                     ??_cmd:	; 0 bytes @ 0x0
+   293                           	global	?_data
+   294  0070                     ?_data:	; 0 bytes @ 0x0
+   295                           	global	??_data
+   296  0070                     ??_data:	; 0 bytes @ 0x0
+   297                           	global	?_jump
+   298  0070                     ?_jump:	; 2 bytes @ 0x0
+   299                           	global	?_main
+   300  0070                     ?_main:	; 2 bytes @ 0x0
+   301  0070                     	ds	2
+   302                           	global	cmd@command
+   303  0072                     cmd@command:	; 1 bytes @ 0x2
+   304                           	global	data@data1
+   305  0072                     data@data1:	; 1 bytes @ 0x2
+   306  0072                     	ds	1
+   307                           	global	??_jump
+   308  0073                     ??_jump:	; 0 bytes @ 0x3
+   309                           	global	??_stop
+   310  0073                     ??_stop:	; 0 bytes @ 0x3
+   311                           	global	?_character
+   312  0073                     ?_character:	; 0 bytes @ 0x3
+   313                           	global	character@location
+   314  0073                     character@location:	; 1 bytes @ 0x3
+   315  0073                     	ds	1
+   316                           	global	??_character
+   317  0074                     ??_character:	; 0 bytes @ 0x4
+   318  0074                     	ds	2
+   319                           	global	??_score
+   320  0076                     ??_score:	; 0 bytes @ 0x6
+   321                           	global	character@car
+   322  0076                     character@car:	; 1 bytes @ 0x6
+   323                           	global	stop@stop
+   324  0076                     stop@stop:	; 1 bytes @ 0x6
+   325  0076                     	ds	1
+   326                           	global	character@i
+   327  0077                     character@i:	; 2 bytes @ 0x7
+   328                           	global	stop@i
+   329  0077                     stop@i:	; 2 bytes @ 0x7
+   330  0077                     	ds	2
+   331                           	global	score@name
+   332  0079                     score@name:	; 1 bytes @ 0x9
+   333  0079                     	ds	1
+   334                           	global	score@num
+   335  007A                     score@num:	; 1 bytes @ 0xA
+   336  007A                     	ds	1
+   337                           	global	score@j
+   338  007B                     score@j:	; 2 bytes @ 0xB
+   339  007B                     	ds	2
+   340                           psect	cstackBANK0,class=BANK0,space=1
+   341                           global __pcstackBANK0
+   342  0020                     __pcstackBANK0:
+   343                           	global	??_main
+   344  0020                     ??_main:	; 0 bytes @ 0x0
+   345  0020                     	ds	4
+   346                           	global	main@arr
+   347  0024                     main@arr:	; 8 bytes @ 0x4
+   348  0024                     	ds	8
+   349                           	global	main@arr1
+   350  002C                     main@arr1:	; 8 bytes @ 0xC
+   351  002C                     	ds	8
+   352                           	global	main@arr2
+   353  0034                     main@arr2:	; 8 bytes @ 0x14
+   354  0034                     	ds	8
+   355                           	global	main@arr3
+   356  003C                     main@arr3:	; 8 bytes @ 0x1C
+   357  003C                     	ds	8
+   358                           	global	main@i
+   359  0044                     main@i:	; 2 bytes @ 0x24
+   360  0044                     	ds	2
+   361 ;;Data sizes: Strings 30, constant 0, data 24, bss 14, persistent 0 stack 0
+   362 ;;Auto spaces:   Size  Autos    Used
+   363 ;; COMMON          14     13      13
+   364 ;; BANK0           80     38      76
+   365 ;; BANK1           80      0       0
+   366 ;; BANK3           96      0       0
+   367 ;; BANK2           96      0       0
+   368                           
+   369 ;;
+   370 ;; Pointer list with targets:
+   371                           
+   372 ;; ?_jump	int  size(1) Largest target is 0
+   373 ;;
+   374 ;; stop@stop	PTR unsigned char  size(1) Largest target is 10
+   375 ;;		 -> STR_3(CODE[10]), 
+   376 ;;
+   377 ;; score@name	PTR unsigned char  size(1) Largest target is 9
+   378 ;;		 -> STR_2(CODE[9]), 
+   379 ;;
+   380 ;; score@num	PTR unsigned char  size(1) Largest target is 11
+   381 ;;		 -> STR_1(CODE[11]), 
+   382 ;;
+   383 ;; character@car	PTR unsigned char  size(1) Largest target is 8
+   384 ;;		 -> main@arr3(BANK0[8]), main@arr2(BANK0[8]), main@arr1(BANK0[8]), main@arr(BANK0[8]), 
+   385 ;;
+   386                           
+   387                           
+   388 ;;
+   389 ;; Critical Paths under _main in COMMON
+   390 ;;
+   391 ;;   _main->_score
+   392 ;;   _score->_jump
+   393 ;;   _stop->_cmd
+   394 ;;   _stop->_data
+   395 ;;   _jump->_cmd
+   396 ;;   _jump->_data
+   397 ;;   _character->_cmd
+   398 ;;   _character->_data
+   399 ;;
+   400 ;; Critical Paths under _main in BANK0
+   401 ;;
+   402 ;;   None.
+   403 ;;
+   404 ;; Critical Paths under _main in BANK1
+   405 ;;
+   406 ;;   None.
+   407 ;;
+   408 ;; Critical Paths under _main in BANK3
+   409 ;;
+   410 ;;   None.
+   411 ;;
+   412 ;; Critical Paths under _main in BANK2
+   413 ;;
+   414 ;;   None.
+   415                           
+   416 ;;
+   417 ;;Main: autosize = 0, tempsize = 4, incstack = 0, save=0
+   418 ;;
+   419                           
+   420 ;;
+   421 ;;Call Graph Tables:
+   422 ;;
+   423 ;; ---------------------------------------------------------------------------------
+   424 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   425 ;; ---------------------------------------------------------------------------------
+   426 ;; (0) _main                                                38    38      0    1400
+   427 ;;                                              0 BANK0     38    38      0
+   428 ;;                          _character
+   429 ;;                                _cmd
+   430 ;;                               _data
+   431 ;;                               _jump
+   432 ;;                              _score
+   433 ;;                               _stop
+   434 ;;                               _main
+   435 ;; ---------------------------------------------------------------------------------
+   436 ;; (1) _score                                                7     7      0     224
+   437 ;;                                              6 COMMON     7     7      0
+   438 ;;                                _cmd
+   439 ;;                               _data
+   440 ;;                               _jump
+   441 ;; ---------------------------------------------------------------------------------
+   442 ;; (1) _stop                                                 6     6      0     135
+   443 ;;                                              3 COMMON     6     6      0
+   444 ;;                                _cmd
+   445 ;;                               _data
+   446 ;; ---------------------------------------------------------------------------------
+   447 ;; (2) _jump                                                 3     3      0      44
+   448 ;;                                              3 COMMON     3     3      0
+   449 ;;                                _cmd
+   450 ;;                               _data
+   451 ;; ---------------------------------------------------------------------------------
+   452 ;; (1) _character                                            6     5      1     156
+   453 ;;                                              3 COMMON     6     5      1
+   454 ;;                                _cmd
+   455 ;;                               _data
+   456 ;; ---------------------------------------------------------------------------------
+   457 ;; (2) _data                                                 3     3      0      22
+   458 ;;                                              0 COMMON     3     3      0
+   459 ;; ---------------------------------------------------------------------------------
+   460 ;; (2) _cmd                                                  3     3      0      22
+   461 ;;                                              0 COMMON     3     3      0
+   462 ;; ---------------------------------------------------------------------------------
+   463 ;; Estimated maximum stack depth 2
+   464 ;; ---------------------------------------------------------------------------------
+   465                           
+   466 ;; Call Graph Graphs:
+   467                           
+   468 ;; _main (ROOT)
+   469 ;;   _character
+   470 ;;     _cmd
+   471 ;;     _data
+   472 ;;   _cmd
+   473 ;;   _data
+   474 ;;   _jump
+   475 ;;     _cmd
+   476 ;;     _data
+   477 ;;   _score
+   478 ;;     _cmd
+   479 ;;     _data
+   480 ;;     _jump
+   481 ;;       _cmd
+   482 ;;       _data
+   483 ;;   _stop
+   484 ;;     _cmd
+   485 ;;     _data
+   486 ;;
+   487                           
+   488 ;; Address spaces:
+   489                           
+   490 ;;Name               Size   Autos  Total    Cost      Usage
+   491 ;;BANK3               60      0       0       9        0.0%
+   492 ;;BITBANK3            60      0       0       8        0.0%
+   493 ;;SFR3                 0      0       0       4        0.0%
+   494 ;;BITSFR3              0      0       0       4        0.0%
+   495 ;;BANK2               60      0       0      11        0.0%
+   496 ;;BITBANK2            60      0       0      10        0.0%
+   497 ;;SFR2                 0      0       0       5        0.0%
+   498 ;;BITSFR2              0      0       0       5        0.0%
+   499 ;;SFR1                 0      0       0       2        0.0%
+   500 ;;BITSFR1              0      0       0       2        0.0%
+   501 ;;BANK1               50      0       0       7        0.0%
+   502 ;;BITBANK1            50      0       0       6        0.0%
+   503 ;;CODE                 0      0       0       0        0.0%
+   504 ;;DATA                 0      0      5C      12        0.0%
+   505 ;;ABS                  0      0      59       3        0.0%
+   506 ;;NULL                 0      0       0       0        0.0%
+   507 ;;STACK                0      0       3       2        0.0%
+   508 ;;BANK0               50     26      4C       5       95.0%
+   509 ;;BITBANK0            50      0       0       4        0.0%
+   510 ;;SFR0                 0      0       0       1        0.0%
+   511 ;;BITSFR0              0      0       0       1        0.0%
+   512 ;;COMMON               E      D       D       1       92.9%
+   513 ;;BITCOMMON            E      0       0       0        0.0%
+   514 ;;EEDATA             100      0       0       0        0.0%
+   515                           
+   516                           	global	_main
+   517                           psect	maintext,global,class=CODE,delta=2
+   518                           global __pmaintext
+   519  068E                     __pmaintext:
+   520                           
+   521 ;; *************** function _main *****************
+   522 ;; Defined at:
+   523 ;;		line 39 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+   524 ;; Parameters:    Size  Location     Type
+   525 ;;		None
+   526 ;; Auto vars:     Size  Location     Type
+   527 ;;  arr3            8   28[BANK0 ] unsigned char [8]
+   528 ;;  arr2            8   20[BANK0 ] unsigned char [8]
+   529 ;;  arr1            8   12[BANK0 ] unsigned char [8]
+   530 ;;  arr             8    4[BANK0 ] unsigned char [8]
+   531 ;;  i               2   36[BANK0 ] int 
+   532 ;; Return value:  Size  Location     Type
+   533 ;;                  2  709[COMMON] int 
+   534 ;; Registers used:
+   535 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   536 ;; Tracked objects:
+   537 ;;		On entry : 0/0
+   538 ;;		On exit  : 0/0
+   539 ;;		Unchanged: 0/0
+   540 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   541 ;;      Params:         0       0       0       0       0
+   542 ;;      Locals:         0      34       0       0       0
+   543 ;;      Temps:          0       4       0       0       0
+   544 ;;      Totals:         0      38       0       0       0
+   545 ;;Total ram usage:       38 bytes
+   546 ;; Hardware stack levels required when called:    3
+   547 ;; This function calls:
+   548 ;;		_character
+   549 ;;		_cmd
+   550 ;;		_data
+   551 ;;		_jump
+   552 ;;		_score
+   553 ;;		_stop
+   554 ;;		_main
+   555 ;; This function is called by:
+   556 ;; This function uses a non-reentrant model
+   557 ;;
+   558                           psect	maintext
+   559                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+   560                           	line	39
+   561                           	global	__size_of_main
+   562  0172                     	__size_of_main	equ	__end_of_main-_main
+   563                           	
+   564  068E                     _main:	
+   565                           	opt	stack 5
+   566                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   567                           	line	40
+   568                           	
+   569  068E                     l2168:	
+   570                           ;dinogame.c: 40: TRISC = 0;
+   571  068E  1683               	bsf	status, 5	;RP0=1, select bank1
+   572  068F  1303               	bcf	status, 6	;RP1=0, select bank1
+   573  0690  0187               	clrf	(135)^080h	;volatile
+   574                           	line	41
+   575                           ;dinogame.c: 41: TRISD = 0;
+   576  0691  0188               	clrf	(136)^080h	;volatile
+   577                           	line	42
+   578                           	
+   579  0692                     l2170:	
+   580                           ;dinogame.c: 42: TRISC3 = 1;
+   581  0692  1587               	bsf	(1083/8)^080h,(1083)&7
+   582                           	line	43
+   583                           	
+   584  0693                     l2172:	
+   585                           ;dinogame.c: 43: char arr[8]={0x03,0x02,0x13,0x16,0x1F,0x0E,0x0A,0x0A};
+   586  0693  3024               	movlw	(main@arr)&0ffh
+   587  0694  0084               	movwf	fsr0
+   588  0695  3046               	movlw	low(main@F1103)
+   589  0696  1283               	bcf	status, 5	;RP0=0, select bank0
+   590  0697  1303               	bcf	status, 6	;RP1=0, select bank0
+   591  0698  00A0               	movwf	(??_main+0)+0
+   592  0699  0804               	movf	fsr0,w
+   593  069A  00A1               	movwf	((??_main+0)+0+1)
+   594  069B  3008               	movlw	8
+   595  069C  00A2               	movwf	((??_main+0)+0+2)
+   596  069D                     u2430:
+   597  069D  0820               	movf	(??_main+0)+0,w
+   598  069E  0084               	movwf	fsr0
+   599  069F  1383               	bcf	status, 7	;select IRP bank0
+   600                           	
+   601  06A0  0800               	movf	indf,w
+   602  06A1  00A3               	movwf	((??_main+0)+0+3)
+   603  06A2  0AA0               	incf	(??_main+0)+0,f
+   604  06A3  0821               	movf	((??_main+0)+0+1),w
+   605  06A4  0084               	movwf	fsr0
+   606                           	
+   607  06A5  0823               	movf	((??_main+0)+0+3),w
+   608  06A6  0080               	movwf	indf
+   609  06A7  0AA1               	incf	((??_main+0)+0+1),f
+   610  06A8  0BA2               	decfsz	((??_main+0)+0+2),f
+   611  06A9  2E9D               	goto	u2430
+   612                           	line	44
+   613                           	
+   614  06AA                     l2174:	
+   615                           ;dinogame.c: 44: character(arr,0);
+   616  06AA  01F3               	clrf	(?_character)
+   617  06AB  3024               	movlw	(main@arr)&0ffh
+   618  06AC  120A  118A  2591   	fcall	_character
+              120A  118A         
+   619                           	line	45
+   620                           	
+   621  06B1                     l2176:	
+   622                           ;dinogame.c: 45: char arr1[8]={0x0E,0x0E,0x04,0x1E,0x04,0x04,0x1E,0x00};
+   623  06B1  302C               	movlw	(main@arr1)&0ffh
+   624  06B2  0084               	movwf	fsr0
+   625  06B3  304E               	movlw	low(main@F1105)
+   626  06B4  1283               	bcf	status, 5	;RP0=0, select bank0
+   627  06B5  1303               	bcf	status, 6	;RP1=0, select bank0
+   628  06B6  00A0               	movwf	(??_main+0)+0
+   629  06B7  0804               	movf	fsr0,w
+   630  06B8  00A1               	movwf	((??_main+0)+0+1)
+   631  06B9  3008               	movlw	8
+   632  06BA  00A2               	movwf	((??_main+0)+0+2)
+   633  06BB                     u2440:
+   634  06BB  0820               	movf	(??_main+0)+0,w
+   635  06BC  0084               	movwf	fsr0
+   636  06BD  1383               	bcf	status, 7	;select IRP bank0
+   637                           	
+   638  06BE  0800               	movf	indf,w
+   639  06BF  00A3               	movwf	((??_main+0)+0+3)
+   640  06C0  0AA0               	incf	(??_main+0)+0,f
+   641  06C1  0821               	movf	((??_main+0)+0+1),w
+   642  06C2  0084               	movwf	fsr0
+   643                           	
+   644  06C3  0823               	movf	((??_main+0)+0+3),w
+   645  06C4  0080               	movwf	indf
+   646  06C5  0AA1               	incf	((??_main+0)+0+1),f
+   647  06C6  0BA2               	decfsz	((??_main+0)+0+2),f
+   648  06C7  2EBB               	goto	u2440
+   649                           	line	46
+   650                           	
+   651  06C8                     l2178:	
+   652                           ;dinogame.c: 46: character(arr1,1);
+   653  06C8  01F3               	clrf	(?_character)
+   654  06C9  1403               	bsf	status,0
+   655  06CA  0DF3               	rlf	(?_character),f
+   656  06CB  302C               	movlw	(main@arr1)&0ffh
+   657  06CC  120A  118A  2591   	fcall	_character
+              120A  118A         
+   658                           	line	47
+   659                           	
+   660  06D1                     l2180:	
+   661                           ;dinogame.c: 47: char arr2[8]={0x14,0x14,0x15,0x15,0x1D,0x06,0X04,0x1F};
+   662  06D1  3034               	movlw	(main@arr2)&0ffh
+   663  06D2  0084               	movwf	fsr0
+   664  06D3  3056               	movlw	low(main@F1107)
+   665  06D4  1283               	bcf	status, 5	;RP0=0, select bank0
+   666  06D5  1303               	bcf	status, 6	;RP1=0, select bank0
+   667  06D6  00A0               	movwf	(??_main+0)+0
+   668  06D7  0804               	movf	fsr0,w
+   669  06D8  00A1               	movwf	((??_main+0)+0+1)
+   670  06D9  3008               	movlw	8
+   671  06DA  00A2               	movwf	((??_main+0)+0+2)
+   672  06DB                     u2450:
+   673  06DB  0820               	movf	(??_main+0)+0,w
+   674  06DC  0084               	movwf	fsr0
+   675  06DD  1383               	bcf	status, 7	;select IRP bank0
+   676                           	
+   677  06DE  0800               	movf	indf,w
+   678  06DF  00A3               	movwf	((??_main+0)+0+3)
+   679  06E0  0AA0               	incf	(??_main+0)+0,f
+   680  06E1  0821               	movf	((??_main+0)+0+1),w
+   681  06E2  0084               	movwf	fsr0
+   682                           	
+   683  06E3  0823               	movf	((??_main+0)+0+3),w
+   684  06E4  0080               	movwf	indf
+   685  06E5  0AA1               	incf	((??_main+0)+0+1),f
+   686  06E6  0BA2               	decfsz	((??_main+0)+0+2),f
+   687  06E7  2EDB               	goto	u2450
+   688                           	line	48
+   689                           	
+   690  06E8                     l2182:	
+   691                           ;dinogame.c: 48: character(arr2,2);
+   692  06E8  3002               	movlw	(02h)
+   693  06E9  00A0               	movwf	(??_main+0)+0
+   694  06EA  0820               	movf	(??_main+0)+0,w
+   695  06EB  00F3               	movwf	(?_character)
+   696  06EC  3034               	movlw	(main@arr2)&0ffh
+   697  06ED  120A  118A  2591   	fcall	_character
+              120A  118A         
+   698                           	line	49
+   699                           	
+   700  06F2                     l2184:	
+   701                           ;dinogame.c: 49: char arr3[8]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+   702  06F2  303C               	movlw	(main@arr3)&0ffh
+   703  06F3  0084               	movwf	fsr0
+   704  06F4  305E               	movlw	low(main@F1109)
+   705  06F5  1283               	bcf	status, 5	;RP0=0, select bank0
+   706  06F6  1303               	bcf	status, 6	;RP1=0, select bank0
+   707  06F7  00A0               	movwf	(??_main+0)+0
+   708  06F8  0804               	movf	fsr0,w
+   709  06F9  00A1               	movwf	((??_main+0)+0+1)
+   710  06FA  3008               	movlw	8
+   711  06FB  00A2               	movwf	((??_main+0)+0+2)
+   712  06FC                     u2460:
+   713  06FC  0820               	movf	(??_main+0)+0,w
+   714  06FD  0084               	movwf	fsr0
+   715  06FE  1383               	bcf	status, 7	;select IRP bank0
+   716                           	
+   717  06FF  0800               	movf	indf,w
+   718  0700  00A3               	movwf	((??_main+0)+0+3)
+   719  0701  0AA0               	incf	(??_main+0)+0,f
+   720  0702  0821               	movf	((??_main+0)+0+1),w
+   721  0703  0084               	movwf	fsr0
+   722                           	
+   723  0704  0823               	movf	((??_main+0)+0+3),w
+   724  0705  0080               	movwf	indf
+   725  0706  0AA1               	incf	((??_main+0)+0+1),f
+   726  0707  0BA2               	decfsz	((??_main+0)+0+2),f
+   727  0708  2EFC               	goto	u2460
+   728                           	line	50
+   729                           	
+   730  0709                     l2186:	
+   731                           ;dinogame.c: 50: character(arr3,3);
+   732  0709  3003               	movlw	(03h)
+   733  070A  00A0               	movwf	(??_main+0)+0
+   734  070B  0820               	movf	(??_main+0)+0,w
+   735  070C  00F3               	movwf	(?_character)
+   736  070D  303C               	movlw	(main@arr3)&0ffh
+   737  070E  120A  118A  2591   	fcall	_character
+              120A  118A         
+   738                           	line	51
+   739                           	
+   740  0713                     l2188:	
+   741                           ;dinogame.c: 51: cmd(0x01);
+   742  0713  3001               	movlw	(01h)
+   743  0714  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   744                           	line	52
+   745                           	
+   746  0719                     l2190:	
+   747                           ;dinogame.c: 52: cmd(0x0C);
+   748  0719  300C               	movlw	(0Ch)
+   749  071A  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   750                           	line	53
+   751                           	
+   752  071F                     l2192:	
+   753                           ;dinogame.c: 53: cmd(0x38);
+   754  071F  3038               	movlw	(038h)
+   755  0720  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   756                           	line	54
+   757                           	
+   758  0725                     l2194:	
+   759                           ;dinogame.c: 54: cmd(0xc0);
+   760  0725  30C0               	movlw	(0C0h)
+   761  0726  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   762                           	line	55
+   763                           	
+   764  072B                     l2196:	
+   765                           ;dinogame.c: 55: data(0);
+   766  072B  3000               	movlw	(0)
+   767  072C  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   768                           	line	56
+   769                           	
+   770  0731                     l2198:	
+   771                           ;dinogame.c: 56: cmd(0xcf);
+   772  0731  30CF               	movlw	(0CFh)
+   773  0732  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   774                           	line	57
+   775                           	
+   776  0737                     l2200:	
+   777                           ;dinogame.c: 57: data(2);
+   778  0737  3002               	movlw	(02h)
+   779  0738  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   780                           	line	58
+   781                           	
+   782  073D                     l2202:	
+   783                           ;dinogame.c: 58: int i=0;
+   784  073D  1283               	bcf	status, 5	;RP0=0, select bank0
+   785  073E  1303               	bcf	status, 6	;RP1=0, select bank0
+   786  073F  01C4               	clrf	(main@i)
+   787  0740  01C5               	clrf	(main@i+1)
+   788                           	line	59
+   789                           	
+   790  0741                     l2204:	
+   791                           ;dinogame.c: 59: _delay((unsigned long)((200)*(20000000/4000.0)));
+   792                           	opt asmopt_off
+   793  0741  3006               movlw  6
+   794  0742  00A2               movwf	((??_main+0)+0+2),f
+   795  0743  300E               movlw	14
+   796  0744  00A1               movwf	((??_main+0)+0+1),f
+   797  0745  30B0               	movlw	176
+   798  0746  00A0               movwf	((??_main+0)+0),f
+   799  0747                     u2527:
+   800  0747  0BA0               	decfsz	((??_main+0)+0),f
+   801  0748  2F47               	goto	u2527
+   802  0749  0BA1               	decfsz	((??_main+0)+0+1),f
+   803  074A  2F47               	goto	u2527
+   804  074B  0BA2               	decfsz	((??_main+0)+0+2),f
+   805  074C  2F47               	goto	u2527
+   806                           opt asmopt_on
+   807                           
+   808  074D  2F4E               	goto	l2206
+   809                           	line	60
+   810                           ;dinogame.c: 60: while(1)
+   811                           	
+   812  074E                     l718:	
+   813                           	line	63
+   814                           	
+   815  074E                     l2206:	
+   816                           ;dinogame.c: 61: {
+   817                           ;dinogame.c: 63: if(RC3 == 1)
+   818  074E  1283               	bcf	status, 5	;RP0=0, select bank0
+   819  074F  1303               	bcf	status, 6	;RP1=0, select bank0
+   820  0750  1D87               	btfss	(59/8),(59)&7
+   821  0751  2F53               	goto	u2471
+   822  0752  2F54               	goto	u2470
+   823  0753                     u2471:
+   824  0753  2F5A               	goto	l2210
+   825  0754                     u2470:
+   826                           	line	65
+   827                           	
+   828  0754                     l2208:	
+   829                           ;dinogame.c: 64: {
+   830                           ;dinogame.c: 65: jump();
+   831  0754  120A  118A  24F9   	fcall	_jump
+              120A  118A         
+   832  0759  2F5A               	goto	l2210
+   833                           	line	66
+   834                           	
+   835  075A                     l719:	
+   836                           	line	67
+   837                           	
+   838  075A                     l2210:	
+   839                           ;dinogame.c: 66: }
+   840                           ;dinogame.c: 67: score();
+   841  075A  120A  118A  25E6   	fcall	_score
+              120A  118A         
+   842                           	line	68
+   843                           	
+   844  075F                     l2212:	
+   845                           ;dinogame.c: 68: data(3);
+   846  075F  3003               	movlw	(03h)
+   847  0760  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   848                           	line	69
+   849                           	
+   850  0765                     l2214:	
+   851                           ;dinogame.c: 69: cmd(0xcf - c);
+   852  0765  1283               	bcf	status, 5	;RP0=0, select bank0
+   853  0766  1303               	bcf	status, 6	;RP1=0, select bank0
+   854  0767  0366               	decf	(_c),w
+   855  0768  3AFF               	xorlw	0ffh
+   856  0769  3ECF               	addlw	0CFh
+   857  076A  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   858                           	line	70
+   859                           	
+   860  076F                     l2216:	
+   861                           ;dinogame.c: 70: data(3);
+   862  076F  3003               	movlw	(03h)
+   863  0770  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   864                           	line	71
+   865                           	
+   866  0775                     l2218:	
+   867                           ;dinogame.c: 71: _delay((unsigned long)((100)*(20000000/4000.0)));
+   868                           	opt asmopt_off
+   869  0775  3003               movlw  3
+   870  0776  1283               	bcf	status, 5	;RP0=0, select bank0
+   871  0777  1303               	bcf	status, 6	;RP1=0, select bank0
+   872  0778  00A2               movwf	((??_main+0)+0+2),f
+   873  0779  3088               movlw	136
+   874  077A  00A1               movwf	((??_main+0)+0+1),f
+   875  077B  3056               	movlw	86
+   876  077C  00A0               movwf	((??_main+0)+0),f
+   877  077D                     u2537:
+   878  077D  0BA0               	decfsz	((??_main+0)+0),f
+   879  077E  2F7D               	goto	u2537
+   880  077F  0BA1               	decfsz	((??_main+0)+0+1),f
+   881  0780  2F7D               	goto	u2537
+   882  0781  0BA2               	decfsz	((??_main+0)+0+2),f
+   883  0782  2F7D               	goto	u2537
+   884                           opt asmopt_on
+   885                           
+   886                           	line	72
+   887                           	
+   888  0783                     l2220:	
+   889                           ;dinogame.c: 72: data(3);
+   890  0783  3003               	movlw	(03h)
+   891  0784  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   892                           	line	73
+   893                           	
+   894  0789                     l2222:	
+   895                           ;dinogame.c: 73: cmd(0xcf - c);
+   896  0789  1283               	bcf	status, 5	;RP0=0, select bank0
+   897  078A  1303               	bcf	status, 6	;RP1=0, select bank0
+   898  078B  0366               	decf	(_c),w
+   899  078C  3AFF               	xorlw	0ffh
+   900  078D  3ECF               	addlw	0CFh
+   901  078E  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   902                           	line	74
+   903                           	
+   904  0793                     l2224:	
+   905                           ;dinogame.c: 74: data(2);
+   906  0793  3002               	movlw	(02h)
+   907  0794  120A  118A  24AC   	fcall	_data
+              120A  118A         
+   908                           	line	75
+   909                           	
+   910  0799                     l2226:	
+   911                           ;dinogame.c: 75: c++;
+   912  0799  3001               	movlw	low(01h)
+   913  079A  1283               	bcf	status, 5	;RP0=0, select bank0
+   914  079B  1303               	bcf	status, 6	;RP1=0, select bank0
+   915  079C  07E6               	addwf	(_c),f
+   916  079D  1803               	skipnc
+   917  079E  0AE7               	incf	(_c+1),f
+   918  079F  3000               	movlw	high(01h)
+   919  07A0  07E7               	addwf	(_c+1),f
+   920                           	line	76
+   921                           	
+   922  07A1                     l2228:	
+   923                           ;dinogame.c: 76: if(c>15 && RC3 == 0)
+   924  07A1  0867               	movf	(_c+1),w
+   925  07A2  3A80               	xorlw	80h
+   926  07A3  00FF               	movwf	btemp+1
+   927  07A4  3080               	movlw	(high(010h))^80h
+   928  07A5  027F               	subwf	btemp+1,w
+   929  07A6  1D03               	skipz
+   930  07A7  2FAA               	goto	u2485
+   931  07A8  3010               	movlw	low(010h)
+   932  07A9  0266               	subwf	(_c),w
+   933  07AA                     u2485:
+   934                           
+   935  07AA  1C03               	skipc
+   936  07AB  2FAD               	goto	u2481
+   937  07AC  2FAE               	goto	u2480
+   938  07AD                     u2481:
+   939  07AD  2FC3               	goto	l2238
+   940  07AE                     u2480:
+   941                           	
+   942  07AE                     l2230:	
+   943  07AE  1283               	bcf	status, 5	;RP0=0, select bank0
+   944  07AF  1303               	bcf	status, 6	;RP1=0, select bank0
+   945  07B0  1987               	btfsc	(59/8),(59)&7
+   946  07B1  2FB3               	goto	u2491
+   947  07B2  2FB4               	goto	u2490
+   948  07B3                     u2491:
+   949  07B3  2FC3               	goto	l2238
+   950  07B4                     u2490:
+   951                           	line	78
+   952                           	
+   953  07B4                     l2232:	
+   954                           ;dinogame.c: 77: {
+   955                           ;dinogame.c: 78: stop();
+   956  07B4  120A  118A  253F   	fcall	_stop
+              120A  118A         
+   957                           	line	79
+   958                           	
+   959  07B9                     l2234:	
+   960                           ;dinogame.c: 79: cmd(0x01);
+   961  07B9  3001               	movlw	(01h)
+   962  07BA  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+   963                           	line	80
+   964                           	
+   965  07BF                     l2236:	
+   966                           ;dinogame.c: 80: main();
+   967  07BF  268E  120A  118A   	fcall	_main
+   968  07C2  2FC3               	goto	l2238
+   969                           	line	81
+   970                           	
+   971  07C3                     l720:	
+   972                           	line	82
+   973                           	
+   974  07C3                     l2238:	
+   975                           ;dinogame.c: 81: }
+   976                           ;dinogame.c: 82: if(c>15)
+   977  07C3  1283               	bcf	status, 5	;RP0=0, select bank0
+   978  07C4  1303               	bcf	status, 6	;RP1=0, select bank0
+   979  07C5  0867               	movf	(_c+1),w
+   980  07C6  3A80               	xorlw	80h
+   981  07C7  00FF               	movwf	btemp+1
+   982  07C8  3080               	movlw	(high(010h))^80h
+   983  07C9  027F               	subwf	btemp+1,w
+   984  07CA  1D03               	skipz
+   985  07CB  2FCE               	goto	u2505
+   986  07CC  3010               	movlw	low(010h)
+   987  07CD  0266               	subwf	(_c),w
+   988  07CE                     u2505:
+   989                           
+   990  07CE  1C03               	skipc
+   991  07CF  2FD1               	goto	u2501
+   992  07D0  2FD2               	goto	u2500
+   993  07D1                     u2501:
+   994  07D1  2FEF               	goto	l2248
+   995  07D2                     u2500:
+   996                           	line	84
+   997                           	
+   998  07D2                     l2240:	
+   999                           ;dinogame.c: 83: {
+  1000                           ;dinogame.c: 84: cmd(0xc0);
+  1001  07D2  30C0               	movlw	(0C0h)
+  1002  07D3  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1003                           	line	85
+  1004                           ;dinogame.c: 85: data(3);
+  1005  07D8  3003               	movlw	(03h)
+  1006  07D9  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1007                           	line	86
+  1008                           	
+  1009  07DE                     l2242:	
+  1010                           ;dinogame.c: 86: c=0;
+  1011  07DE  1283               	bcf	status, 5	;RP0=0, select bank0
+  1012  07DF  1303               	bcf	status, 6	;RP1=0, select bank0
+  1013  07E0  01E6               	clrf	(_c)
+  1014  07E1  01E7               	clrf	(_c+1)
+  1015                           	line	87
+  1016                           	
+  1017  07E2                     l2244:	
+  1018                           ;dinogame.c: 87: cmd(0xc0);
+  1019  07E2  30C0               	movlw	(0C0h)
+  1020  07E3  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1021                           	line	88
+  1022                           	
+  1023  07E8                     l2246:	
+  1024                           ;dinogame.c: 88: data(0);
+  1025  07E8  3000               	movlw	(0)
+  1026  07E9  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1027  07EE  2FEF               	goto	l2248
+  1028                           	line	89
+  1029                           	
+  1030  07EF                     l721:	
+  1031                           	line	90
+  1032                           	
+  1033  07EF                     l2248:	
+  1034                           ;dinogame.c: 89: }
+  1035                           ;dinogame.c: 90: if(RC3 == 1)
+  1036  07EF  1283               	bcf	status, 5	;RP0=0, select bank0
+  1037  07F0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1038  07F1  1D87               	btfss	(59/8),(59)&7
+  1039  07F2  2FF4               	goto	u2511
+  1040  07F3  2FF5               	goto	u2510
+  1041  07F4                     u2511:
+  1042  07F4  2F4E               	goto	l2206
+  1043  07F5                     u2510:
+  1044                           	line	91
+  1045                           	
+  1046  07F5                     l2250:	
+  1047                           ;dinogame.c: 91: jump();
+  1048  07F5  120A  118A  24F9   	fcall	_jump
+              120A  118A         
+  1049  07FA  2F4E               	goto	l2206
+  1050                           	
+  1051  07FB                     l722:	
+  1052  07FB  2F4E               	goto	l2206
+  1053                           	line	93
+  1054                           	
+  1055  07FC                     l723:	
+  1056                           	line	60
+  1057  07FC  2F4E               	goto	l2206
+  1058                           	
+  1059  07FD                     l724:	
+  1060                           	line	94
+  1061                           	
+  1062  07FD                     l725:	
+  1063                           	global	start
+  1064  07FD  120A  118A  2800   	ljmp	start
+  1065                           	opt stack 0
+  1066                           GLOBAL	__end_of_main
+  1067  0800                     	__end_of_main:
+  1068 ;; =============== function _main ends ============
+  1069                           
+  1070                           	signat	_main,90
+  1071                           	global	_score
+  1072                           psect	text175,local,class=CODE,delta=2
+  1073                           global __ptext175
+  1074  05E6                     __ptext175:
+  1075                           
+  1076 ;; *************** function _score *****************
+  1077 ;; Defined at:
+  1078 ;;		line 96 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1079 ;; Parameters:    Size  Location     Type
+  1080 ;;		None
+  1081 ;; Auto vars:     Size  Location     Type
+  1082 ;;  j               2   11[COMMON] int 
+  1083 ;;  num             1   10[COMMON] PTR unsigned char 
+  1084 ;;		 -> STR_1(11), 
+  1085 ;;  name            1    9[COMMON] PTR unsigned char 
+  1086 ;;		 -> STR_2(9), 
+  1087 ;; Return value:  Size  Location     Type
+  1088 ;;		None               void
+  1089 ;; Registers used:
+  1090 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1091 ;; Tracked objects:
+  1092 ;;		On entry : 0/0
+  1093 ;;		On exit  : 0/0
+  1094 ;;		Unchanged: 0/0
+  1095 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1096 ;;      Params:         0       0       0       0       0
+  1097 ;;      Locals:         4       0       0       0       0
+  1098 ;;      Temps:          3       0       0       0       0
+  1099 ;;      Totals:         7       0       0       0       0
+  1100 ;;Total ram usage:        7 bytes
+  1101 ;; Hardware stack levels used:    1
+  1102 ;; Hardware stack levels required when called:    2
+  1103 ;; This function calls:
+  1104 ;;		_cmd
+  1105 ;;		_data
+  1106 ;;		_jump
+  1107 ;; This function is called by:
+  1108 ;;		_main
+  1109 ;; This function uses a non-reentrant model
+  1110 ;;
+  1111                           psect	text175
+  1112                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1113                           	line	96
+  1114                           	global	__size_of_score
+  1115  00A8                     	__size_of_score	equ	__end_of_score-_score
+  1116                           	
+  1117  05E6                     _score:	
+  1118                           	opt	stack 5
+  1119                           ; Regs used in _score: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1120                           	line	97
+  1121                           	
+  1122  05E6                     l2132:	
+  1123                           ;dinogame.c: 97: char *num="0123456789";
+  1124  05E6  3001               	movlw	((STR_1-__stringbase))&0ffh
+  1125  05E7  00F6               	movwf	(??_score+0)+0
+  1126  05E8  0876               	movf	(??_score+0)+0,w
+  1127  05E9  00FA               	movwf	(score@num)
+  1128                           	line	98
+  1129                           ;dinogame.c: 98: char *name="score : ";
+  1130  05EA  3016               	movlw	((STR_2-__stringbase))&0ffh
+  1131  05EB  00F6               	movwf	(??_score+0)+0
+  1132  05EC  0876               	movf	(??_score+0)+0,w
+  1133  05ED  00F9               	movwf	(score@name)
+  1134                           	line	99
+  1135                           	
+  1136  05EE                     l2134:	
+  1137                           ;dinogame.c: 99: cmd(0x82);
+  1138  05EE  3082               	movlw	(082h)
+  1139  05EF  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1140                           	line	100
+  1141                           	
+  1142  05F4                     l2136:	
+  1143                           ;dinogame.c: 100: for(int j=0;j<7;j++)
+  1144  05F4  01FB               	clrf	(score@j)
+  1145  05F5  01FC               	clrf	(score@j+1)
+  1146                           	
+  1147  05F6                     l2138:	
+  1148  05F6  087C               	movf	(score@j+1),w
+  1149  05F7  3A80               	xorlw	80h
+  1150  05F8  00FF               	movwf	btemp+1
+  1151  05F9  3080               	movlw	(high(07h))^80h
+  1152  05FA  027F               	subwf	btemp+1,w
+  1153  05FB  1D03               	skipz
+  1154  05FC  2DFF               	goto	u2385
+  1155  05FD  3007               	movlw	low(07h)
+  1156  05FE  027B               	subwf	(score@j),w
+  1157  05FF                     u2385:
+  1158                           
+  1159  05FF  1C03               	skipc
+  1160  0600  2E02               	goto	u2381
+  1161  0601  2E03               	goto	u2380
+  1162  0602                     u2381:
+  1163  0602  2E05               	goto	l2142
+  1164  0603                     u2380:
+  1165  0603  2E26               	goto	l2148
+  1166                           	
+  1167  0604                     l2140:	
+  1168  0604  2E26               	goto	l2148
+  1169                           	line	101
+  1170                           	
+  1171  0605                     l728:	
+  1172                           	
+  1173  0605                     l2142:	
+  1174                           ;dinogame.c: 101: data(name[j]);
+  1175  0605  087B               	movf	(score@j),w
+  1176  0606  0779               	addwf	(score@name),w
+  1177  0607  0084               	movwf	fsr0
+  1178  0608  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1179  060D  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1180                           	line	100
+  1181                           	
+  1182  0612                     l2144:	
+  1183  0612  3001               	movlw	low(01h)
+  1184  0613  07FB               	addwf	(score@j),f
+  1185  0614  1803               	skipnc
+  1186  0615  0AFC               	incf	(score@j+1),f
+  1187  0616  3000               	movlw	high(01h)
+  1188  0617  07FC               	addwf	(score@j+1),f
+  1189                           	
+  1190  0618                     l2146:	
+  1191  0618  087C               	movf	(score@j+1),w
+  1192  0619  3A80               	xorlw	80h
+  1193  061A  00FF               	movwf	btemp+1
+  1194  061B  3080               	movlw	(high(07h))^80h
+  1195  061C  027F               	subwf	btemp+1,w
+  1196  061D  1D03               	skipz
+  1197  061E  2E21               	goto	u2395
+  1198  061F  3007               	movlw	low(07h)
+  1199  0620  027B               	subwf	(score@j),w
+  1200  0621                     u2395:
+  1201                           
+  1202  0621  1C03               	skipc
+  1203  0622  2E24               	goto	u2391
+  1204  0623  2E25               	goto	u2390
+  1205  0624                     u2391:
+  1206  0624  2E05               	goto	l2142
+  1207  0625                     u2390:
+  1208  0625  2E26               	goto	l2148
+  1209                           	
+  1210  0626                     l729:	
+  1211                           	line	102
+  1212                           	
+  1213  0626                     l2148:	
+  1214                           ;dinogame.c: 102: cmd(0x8A);
+  1215  0626  308A               	movlw	(08Ah)
+  1216  0627  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1217                           	line	103
+  1218                           	
+  1219  062C                     l2150:	
+  1220                           ;dinogame.c: 103: data(num[k]);
+  1221  062C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1222  062D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1223  062E  086A               	movf	(_k),w
+  1224  062F  077A               	addwf	(score@num),w
+  1225  0630  0084               	movwf	fsr0
+  1226  0631  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1227  0636  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1228                           	line	104
+  1229                           	
+  1230  063B                     l2152:	
+  1231                           ;dinogame.c: 104: cmd(0x8B);
+  1232  063B  308B               	movlw	(08Bh)
+  1233  063C  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1234                           	line	105
+  1235                           ;dinogame.c: 105: data(num[i]);
+  1236  0641  1283               	bcf	status, 5	;RP0=0, select bank0
+  1237  0642  1303               	bcf	status, 6	;RP1=0, select bank0
+  1238  0643  0868               	movf	(_i),w
+  1239  0644  077A               	addwf	(score@num),w
+  1240  0645  0084               	movwf	fsr0
+  1241  0646  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1242  064B  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1243                           	line	106
+  1244                           	
+  1245  0650                     l2154:	
+  1246                           ;dinogame.c: 106: _delay((unsigned long)((100)*(20000000/4000.0)));
+  1247                           	opt asmopt_off
+  1248  0650  3003               movlw  3
+  1249  0651  00F8               movwf	((??_score+0)+0+2),f
+  1250  0652  3088               movlw	136
+  1251  0653  00F7               movwf	((??_score+0)+0+1),f
+  1252  0654  3056               	movlw	86
+  1253  0655  00F6               movwf	((??_score+0)+0),f
+  1254  0656                     u2547:
+  1255  0656  0BF6               	decfsz	((??_score+0)+0),f
+  1256  0657  2E56               	goto	u2547
+  1257  0658  0BF7               	decfsz	((??_score+0)+0+1),f
+  1258  0659  2E56               	goto	u2547
+  1259  065A  0BF8               	decfsz	((??_score+0)+0+2),f
+  1260  065B  2E56               	goto	u2547
+  1261                           opt asmopt_on
+  1262                           
+  1263                           	line	108
+  1264                           	
+  1265  065C                     l2156:	
+  1266                           ;dinogame.c: 108: if(i>10)
+  1267  065C  1283               	bcf	status, 5	;RP0=0, select bank0
+  1268  065D  1303               	bcf	status, 6	;RP1=0, select bank0
+  1269  065E  0869               	movf	(_i+1),w
+  1270  065F  3A80               	xorlw	80h
+  1271  0660  00FF               	movwf	btemp+1
+  1272  0661  3080               	movlw	(high(0Bh))^80h
+  1273  0662  027F               	subwf	btemp+1,w
+  1274  0663  1D03               	skipz
+  1275  0664  2E67               	goto	u2405
+  1276  0665  300B               	movlw	low(0Bh)
+  1277  0666  0268               	subwf	(_i),w
+  1278  0667                     u2405:
+  1279                           
+  1280  0667  1C03               	skipc
+  1281  0668  2E6A               	goto	u2401
+  1282  0669  2E6B               	goto	u2400
+  1283  066A                     u2401:
+  1284  066A  2E80               	goto	l730
+  1285  066B                     u2400:
+  1286                           	line	110
+  1287                           	
+  1288  066B                     l2158:	
+  1289                           ;dinogame.c: 109: {
+  1290                           ;dinogame.c: 110: i=0;
+  1291  066B  1283               	bcf	status, 5	;RP0=0, select bank0
+  1292  066C  1303               	bcf	status, 6	;RP1=0, select bank0
+  1293  066D  01E8               	clrf	(_i)
+  1294  066E  01E9               	clrf	(_i+1)
+  1295                           	line	111
+  1296                           	
+  1297  066F                     l2160:	
+  1298                           ;dinogame.c: 111: k++;
+  1299  066F  3001               	movlw	low(01h)
+  1300  0670  07EA               	addwf	(_k),f
+  1301  0671  1803               	skipnc
+  1302  0672  0AEB               	incf	(_k+1),f
+  1303  0673  3000               	movlw	high(01h)
+  1304  0674  07EB               	addwf	(_k+1),f
+  1305                           	line	112
+  1306                           	
+  1307  0675                     l2162:	
+  1308                           ;dinogame.c: 112: if(k==9)
+  1309  0675  3009               	movlw	09h
+  1310  0676  066A               	xorwf	(_k),w
+  1311  0677  046B               	iorwf	(_k+1),w
+  1312  0678  1D03               	skipz
+  1313  0679  2E7B               	goto	u2411
+  1314  067A  2E7C               	goto	u2410
+  1315  067B                     u2411:
+  1316  067B  2E8D               	goto	l734
+  1317  067C                     u2410:
+  1318                           	line	113
+  1319                           	
+  1320  067C                     l2164:	
+  1321                           ;dinogame.c: 113: k=0;
+  1322  067C  01EA               	clrf	(_k)
+  1323  067D  01EB               	clrf	(_k+1)
+  1324  067E  2E8D               	goto	l734
+  1325                           	
+  1326  067F                     l731:	
+  1327                           	line	114
+  1328                           ;dinogame.c: 114: }
+  1329  067F  2E8D               	goto	l734
+  1330                           	line	115
+  1331                           	
+  1332  0680                     l730:	
+  1333                           ;dinogame.c: 115: else if(RC3 == 1)
+  1334  0680  1283               	bcf	status, 5	;RP0=0, select bank0
+  1335  0681  1303               	bcf	status, 6	;RP1=0, select bank0
+  1336  0682  1D87               	btfss	(59/8),(59)&7
+  1337  0683  2E85               	goto	u2421
+  1338  0684  2E86               	goto	u2420
+  1339  0685                     u2421:
+  1340  0685  2E8D               	goto	l734
+  1341  0686                     u2420:
+  1342                           	line	116
+  1343                           	
+  1344  0686                     l2166:	
+  1345                           ;dinogame.c: 116: jump();
+  1346  0686  120A  118A  24F9   	fcall	_jump
+              120A  118A         
+  1347  068B  2E8D               	goto	l734
+  1348                           	
+  1349  068C                     l733:	
+  1350  068C  2E8D               	goto	l734
+  1351                           	line	117
+  1352                           	
+  1353  068D                     l732:	
+  1354                           	
+  1355  068D                     l734:	
+  1356  068D  0008               	return
+  1357                           	opt stack 0
+  1358                           GLOBAL	__end_of_score
+  1359  068E                     	__end_of_score:
+  1360 ;; =============== function _score ends ============
+  1361                           
+  1362                           	signat	_score,88
+  1363                           	global	_stop
+  1364                           psect	text176,local,class=CODE,delta=2
+  1365                           global __ptext176
+  1366  053F                     __ptext176:
+  1367                           
+  1368 ;; *************** function _stop *****************
+  1369 ;; Defined at:
+  1370 ;;		line 133 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1371 ;; Parameters:    Size  Location     Type
+  1372 ;;		None
+  1373 ;; Auto vars:     Size  Location     Type
+  1374 ;;  i               2    7[COMMON] int 
+  1375 ;;  stop            1    6[COMMON] PTR unsigned char 
+  1376 ;;		 -> STR_3(10), 
+  1377 ;; Return value:  Size  Location     Type
+  1378 ;;		None               void
+  1379 ;; Registers used:
+  1380 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1381 ;; Tracked objects:
+  1382 ;;		On entry : 0/0
+  1383 ;;		On exit  : 0/0
+  1384 ;;		Unchanged: 0/0
+  1385 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1386 ;;      Params:         0       0       0       0       0
+  1387 ;;      Locals:         3       0       0       0       0
+  1388 ;;      Temps:          3       0       0       0       0
+  1389 ;;      Totals:         6       0       0       0       0
+  1390 ;;Total ram usage:        6 bytes
+  1391 ;; Hardware stack levels used:    1
+  1392 ;; Hardware stack levels required when called:    1
+  1393 ;; This function calls:
+  1394 ;;		_cmd
+  1395 ;;		_data
+  1396 ;; This function is called by:
+  1397 ;;		_main
+  1398 ;; This function uses a non-reentrant model
+  1399 ;;
+  1400                           psect	text176
+  1401                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1402                           	line	133
+  1403                           	global	__size_of_stop
+  1404  0052                     	__size_of_stop	equ	__end_of_stop-_stop
+  1405                           	
+  1406  053F                     _stop:	
+  1407                           	opt	stack 6
+  1408                           ; Regs used in _stop: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1409                           	line	134
+  1410                           	
+  1411  053F                     l2114:	
+  1412                           ;dinogame.c: 134: cmd(0x01);
+  1413  053F  3001               	movlw	(01h)
+  1414  0540  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1415                           	line	135
+  1416                           ;dinogame.c: 135: cmd(0x80);
+  1417  0545  3080               	movlw	(080h)
+  1418  0546  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1419                           	line	136
+  1420                           	
+  1421  054B                     l2116:	
+  1422                           ;dinogame.c: 136: char *stop="GAME OVER";
+  1423  054B  300C               	movlw	((STR_3-__stringbase))&0ffh
+  1424  054C  00F3               	movwf	(??_stop+0)+0
+  1425  054D  0873               	movf	(??_stop+0)+0,w
+  1426  054E  00F6               	movwf	(stop@stop)
+  1427                           	line	137
+  1428                           	
+  1429  054F                     l2118:	
+  1430                           ;dinogame.c: 137: for(int i=0;i<9;i++)
+  1431  054F  01F7               	clrf	(stop@i)
+  1432  0550  01F8               	clrf	(stop@i+1)
+  1433                           	
+  1434  0551                     l2120:	
+  1435  0551  0878               	movf	(stop@i+1),w
+  1436  0552  3A80               	xorlw	80h
+  1437  0553  00FF               	movwf	btemp+1
+  1438  0554  3080               	movlw	(high(09h))^80h
+  1439  0555  027F               	subwf	btemp+1,w
+  1440  0556  1D03               	skipz
+  1441  0557  2D5A               	goto	u2365
+  1442  0558  3009               	movlw	low(09h)
+  1443  0559  0277               	subwf	(stop@i),w
+  1444  055A                     u2365:
+  1445                           
+  1446  055A  1C03               	skipc
+  1447  055B  2D5D               	goto	u2361
+  1448  055C  2D5E               	goto	u2360
+  1449  055D                     u2361:
+  1450  055D  2D60               	goto	l2124
+  1451  055E                     u2360:
+  1452  055E  2D8F               	goto	l743
+  1453                           	
+  1454  055F                     l2122:	
+  1455  055F  2D8F               	goto	l743
+  1456                           	line	138
+  1457                           	
+  1458  0560                     l740:	
+  1459                           	line	139
+  1460                           	
+  1461  0560                     l2124:	
+  1462                           ;dinogame.c: 138: {
+  1463                           ;dinogame.c: 139: data(stop[i]);
+  1464  0560  0877               	movf	(stop@i),w
+  1465  0561  0776               	addwf	(stop@stop),w
+  1466  0562  0084               	movwf	fsr0
+  1467  0563  120A  118A  2003   	fcall	stringdir
+              120A  118A         
+  1468  0568  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1469                           	line	140
+  1470                           	
+  1471  056D                     l2126:	
+  1472                           ;dinogame.c: 140: _delay((unsigned long)((300)*(20000000/4000.0)));
+  1473                           	opt asmopt_off
+  1474  056D  3008               movlw  8
+  1475  056E  00F5               movwf	((??_stop+0)+0+2),f
+  1476  056F  3096               movlw	150
+  1477  0570  00F4               movwf	((??_stop+0)+0+1),f
+  1478  0571  3009               	movlw	9
+  1479  0572  00F3               movwf	((??_stop+0)+0),f
+  1480  0573                     u2557:
+  1481  0573  0BF3               	decfsz	((??_stop+0)+0),f
+  1482  0574  2D73               	goto	u2557
+  1483  0575  0BF4               	decfsz	((??_stop+0)+0+1),f
+  1484  0576  2D73               	goto	u2557
+  1485  0577  0BF5               	decfsz	((??_stop+0)+0+2),f
+  1486  0578  2D73               	goto	u2557
+  1487  0579  0064               	clrwdt
+  1488                           opt asmopt_on
+  1489                           
+  1490                           	line	137
+  1491                           	
+  1492  057A                     l2128:	
+  1493  057A  3001               	movlw	low(01h)
+  1494  057B  07F7               	addwf	(stop@i),f
+  1495  057C  1803               	skipnc
+  1496  057D  0AF8               	incf	(stop@i+1),f
+  1497  057E  3000               	movlw	high(01h)
+  1498  057F  07F8               	addwf	(stop@i+1),f
+  1499                           	
+  1500  0580                     l2130:	
+  1501  0580  0878               	movf	(stop@i+1),w
+  1502  0581  3A80               	xorlw	80h
+  1503  0582  00FF               	movwf	btemp+1
+  1504  0583  3080               	movlw	(high(09h))^80h
+  1505  0584  027F               	subwf	btemp+1,w
+  1506  0585  1D03               	skipz
+  1507  0586  2D89               	goto	u2375
+  1508  0587  3009               	movlw	low(09h)
+  1509  0588  0277               	subwf	(stop@i),w
+  1510  0589                     u2375:
+  1511                           
+  1512  0589  1C03               	skipc
+  1513  058A  2D8C               	goto	u2371
+  1514  058B  2D8D               	goto	u2370
+  1515  058C                     u2371:
+  1516  058C  2D60               	goto	l2124
+  1517  058D                     u2370:
+  1518  058D  2D8F               	goto	l743
+  1519                           	
+  1520  058E                     l741:	
+  1521  058E  2D8F               	goto	l743
+  1522                           	line	142
+  1523                           ;dinogame.c: 141: }
+  1524                           ;dinogame.c: 142: while(1);
+  1525                           	
+  1526  058F                     l742:	
+  1527                           	
+  1528  058F                     l743:	
+  1529  058F  2D8F               	goto	l743
+  1530                           	
+  1531  0590                     l744:	
+  1532                           	line	143
+  1533                           	
+  1534  0590                     l745:	
+  1535  0590  0008               	return
+  1536                           	opt stack 0
+  1537                           GLOBAL	__end_of_stop
+  1538  0591                     	__end_of_stop:
+  1539 ;; =============== function _stop ends ============
+  1540                           
+  1541                           	signat	_stop,88
+  1542                           	global	_jump
+  1543                           psect	text177,local,class=CODE,delta=2
+  1544                           global __ptext177
+  1545  04F9                     __ptext177:
+  1546                           
+  1547 ;; *************** function _jump *****************
+  1548 ;; Defined at:
+  1549 ;;		line 119 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1550 ;; Parameters:    Size  Location     Type
+  1551 ;;		None
+  1552 ;; Auto vars:     Size  Location     Type
+  1553 ;;		None
+  1554 ;; Return value:  Size  Location     Type
+  1555 ;;                  2  692[COMMON] int 
+  1556 ;; Registers used:
+  1557 ;;		wreg, status,2, status,0, pclath, cstack
+  1558 ;; Tracked objects:
+  1559 ;;		On entry : 0/0
+  1560 ;;		On exit  : 0/0
+  1561 ;;		Unchanged: 0/0
+  1562 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1563 ;;      Params:         0       0       0       0       0
+  1564 ;;      Locals:         0       0       0       0       0
+  1565 ;;      Temps:          3       0       0       0       0
+  1566 ;;      Totals:         3       0       0       0       0
+  1567 ;;Total ram usage:        3 bytes
+  1568 ;; Hardware stack levels used:    1
+  1569 ;; Hardware stack levels required when called:    1
+  1570 ;; This function calls:
+  1571 ;;		_cmd
+  1572 ;;		_data
+  1573 ;; This function is called by:
+  1574 ;;		_main
+  1575 ;;		_score
+  1576 ;; This function uses a non-reentrant model
+  1577 ;;
+  1578                           psect	text177
+  1579                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1580                           	line	119
+  1581                           	global	__size_of_jump
+  1582  0046                     	__size_of_jump	equ	__end_of_jump-_jump
+  1583                           	
+  1584  04F9                     _jump:	
+  1585                           	opt	stack 5
+  1586                           ; Regs used in _jump: [wreg+status,2+status,0+pclath+cstack]
+  1587                           	line	120
+  1588                           	
+  1589  04F9                     l2098:	
+  1590                           ;dinogame.c: 120: cmd(0xc0);
+  1591  04F9  30C0               	movlw	(0C0h)
+  1592  04FA  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1593                           	line	121
+  1594                           ;dinogame.c: 121: data(3);
+  1595  04FF  3003               	movlw	(03h)
+  1596  0500  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1597                           	line	122
+  1598                           ;dinogame.c: 122: cmd(0x81);
+  1599  0505  3081               	movlw	(081h)
+  1600  0506  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1601                           	line	123
+  1602                           ;dinogame.c: 123: data(1);
+  1603  050B  3001               	movlw	(01h)
+  1604  050C  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1605                           	line	124
+  1606                           	
+  1607  0511                     l2100:	
+  1608                           ;dinogame.c: 124: _delay((unsigned long)((200)*(20000000/4000.0)));
+  1609                           	opt asmopt_off
+  1610  0511  3006               movlw  6
+  1611  0512  00F5               movwf	((??_jump+0)+0+2),f
+  1612  0513  300E               movlw	14
+  1613  0514  00F4               movwf	((??_jump+0)+0+1),f
+  1614  0515  30B0               	movlw	176
+  1615  0516  00F3               movwf	((??_jump+0)+0),f
+  1616  0517                     u2567:
+  1617  0517  0BF3               	decfsz	((??_jump+0)+0),f
+  1618  0518  2D17               	goto	u2567
+  1619  0519  0BF4               	decfsz	((??_jump+0)+0+1),f
+  1620  051A  2D17               	goto	u2567
+  1621  051B  0BF5               	decfsz	((??_jump+0)+0+2),f
+  1622  051C  2D17               	goto	u2567
+  1623                           opt asmopt_on
+  1624                           
+  1625                           	line	125
+  1626                           	
+  1627  051D                     l2102:	
+  1628                           ;dinogame.c: 125: cmd(0x81);
+  1629  051D  3081               	movlw	(081h)
+  1630  051E  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1631                           	line	126
+  1632                           	
+  1633  0523                     l2104:	
+  1634                           ;dinogame.c: 126: data(3);
+  1635  0523  3003               	movlw	(03h)
+  1636  0524  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1637                           	line	127
+  1638                           	
+  1639  0529                     l2106:	
+  1640                           ;dinogame.c: 127: cmd(0xc0);
+  1641  0529  30C0               	movlw	(0C0h)
+  1642  052A  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1643                           	line	128
+  1644                           	
+  1645  052F                     l2108:	
+  1646                           ;dinogame.c: 128: data(0);
+  1647  052F  3000               	movlw	(0)
+  1648  0530  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1649                           	line	129
+  1650                           	
+  1651  0535                     l2110:	
+  1652                           ;dinogame.c: 129: return(i++);
+  1653                           ;	Return value of _jump is never used
+  1654  0535  3001               	movlw	low(01h)
+  1655  0536  1283               	bcf	status, 5	;RP0=0, select bank0
+  1656  0537  1303               	bcf	status, 6	;RP1=0, select bank0
+  1657  0538  07E8               	addwf	(_i),f
+  1658  0539  1803               	skipnc
+  1659  053A  0AE9               	incf	(_i+1),f
+  1660  053B  3000               	movlw	high(01h)
+  1661  053C  07E9               	addwf	(_i+1),f
+  1662  053D  2D3E               	goto	l737
+  1663                           	
+  1664  053E                     l2112:	
+  1665                           	line	131
+  1666                           	
+  1667  053E                     l737:	
+  1668  053E  0008               	return
+  1669                           	opt stack 0
+  1670                           GLOBAL	__end_of_jump
+  1671  053F                     	__end_of_jump:
+  1672 ;; =============== function _jump ends ============
+  1673                           
+  1674                           	signat	_jump,90
+  1675                           	global	_character
+  1676                           psect	text178,local,class=CODE,delta=2
+  1677                           global __ptext178
+  1678  0591                     __ptext178:
+  1679                           
+  1680 ;; *************** function _character *****************
+  1681 ;; Defined at:
+  1682 ;;		line 31 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1683 ;; Parameters:    Size  Location     Type
+  1684 ;;  car             1    wreg     PTR unsigned char 
+  1685 ;;		 -> main@arr3(8), main@arr2(8), main@arr1(8), main@arr(8), 
+  1686 ;;  location        1    3[COMMON] unsigned char 
+  1687 ;; Auto vars:     Size  Location     Type
+  1688 ;;  car             1    6[COMMON] PTR unsigned char 
+  1689 ;;		 -> main@arr3(8), main@arr2(8), main@arr1(8), main@arr(8), 
+  1690 ;;  i               2    7[COMMON] int 
+  1691 ;; Return value:  Size  Location     Type
+  1692 ;;		None               void
+  1693 ;; Registers used:
+  1694 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+  1695 ;; Tracked objects:
+  1696 ;;		On entry : 0/0
+  1697 ;;		On exit  : 0/0
+  1698 ;;		Unchanged: 0/0
+  1699 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1700 ;;      Params:         1       0       0       0       0
+  1701 ;;      Locals:         3       0       0       0       0
+  1702 ;;      Temps:          2       0       0       0       0
+  1703 ;;      Totals:         6       0       0       0       0
+  1704 ;;Total ram usage:        6 bytes
+  1705 ;; Hardware stack levels used:    1
+  1706 ;; Hardware stack levels required when called:    1
+  1707 ;; This function calls:
+  1708 ;;		_cmd
+  1709 ;;		_data
+  1710 ;; This function is called by:
+  1711 ;;		_main
+  1712 ;; This function uses a non-reentrant model
+  1713 ;;
+  1714                           psect	text178
+  1715                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1716                           	line	31
+  1717                           	global	__size_of_character
+  1718  0055                     	__size_of_character	equ	__end_of_character-_character
+  1719                           	
+  1720  0591                     _character:	
+  1721                           	opt	stack 6
+  1722                           ; Regs used in _character: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+  1723                           ;character@car stored from wreg
+  1724  0591  00F6               	movwf	(character@car)
+  1725                           	line	32
+  1726                           	
+  1727  0592                     l2080:	
+  1728                           ;dinogame.c: 32: cmd(0x40+location*8);
+  1729  0592  0873               	movf	(character@location),w
+  1730  0593  00F4               	movwf	(??_character+0)+0
+  1731  0594  3002               	movlw	(03h)-1
+  1732  0595                     u2335:
+  1733  0595  1003               	clrc
+  1734  0596  0DF4               	rlf	(??_character+0)+0,f
+  1735  0597  3EFF               	addlw	-1
+  1736  0598  1D03               	skipz
+  1737  0599  2D95               	goto	u2335
+  1738  059A  1003               	clrc
+  1739  059B  0D74               	rlf	(??_character+0)+0,w
+  1740  059C  3E40               	addlw	040h
+  1741  059D  120A  118A  2497   	fcall	_cmd
+              120A  118A         
+  1742                           	line	33
+  1743                           	
+  1744  05A2                     l2082:	
+  1745                           ;dinogame.c: 33: _delay((unsigned long)((20)*(20000000/4000.0)));
+  1746                           	opt asmopt_off
+  1747  05A2  3082               movlw	130
+  1748  05A3  00F5               movwf	((??_character+0)+0+1),f
+  1749  05A4  30DD               	movlw	221
+  1750  05A5  00F4               movwf	((??_character+0)+0),f
+  1751  05A6                     u2577:
+  1752  05A6  0BF4               	decfsz	((??_character+0)+0),f
+  1753  05A7  2DA6               	goto	u2577
+  1754  05A8  0BF5               	decfsz	((??_character+0)+0+1),f
+  1755  05A9  2DA6               	goto	u2577
+  1756  05AA  2DAB               	nop2
+  1757                           opt asmopt_on
+  1758                           
+  1759                           	line	34
+  1760                           	
+  1761  05AB                     l2084:	
+  1762                           ;dinogame.c: 34: for(int i=0;i<8;i++)
+  1763  05AB  01F7               	clrf	(character@i)
+  1764  05AC  01F8               	clrf	(character@i+1)
+  1765                           	
+  1766  05AD                     l2086:	
+  1767  05AD  0878               	movf	(character@i+1),w
+  1768  05AE  3A80               	xorlw	80h
+  1769  05AF  00FF               	movwf	btemp+1
+  1770  05B0  3080               	movlw	(high(08h))^80h
+  1771  05B1  027F               	subwf	btemp+1,w
+  1772  05B2  1D03               	skipz
+  1773  05B3  2DB6               	goto	u2345
+  1774  05B4  3008               	movlw	low(08h)
+  1775  05B5  0277               	subwf	(character@i),w
+  1776  05B6                     u2345:
+  1777                           
+  1778  05B6  1C03               	skipc
+  1779  05B7  2DB9               	goto	u2341
+  1780  05B8  2DBA               	goto	u2340
+  1781  05B9                     u2341:
+  1782  05B9  2DBC               	goto	l2090
+  1783  05BA                     u2340:
+  1784  05BA  2DDC               	goto	l2096
+  1785                           	
+  1786  05BB                     l2088:	
+  1787  05BB  2DDC               	goto	l2096
+  1788                           	line	35
+  1789                           	
+  1790  05BC                     l705:	
+  1791                           	
+  1792  05BC                     l2090:	
+  1793                           ;dinogame.c: 35: data(car[i]);
+  1794  05BC  0877               	movf	(character@i),w
+  1795  05BD  0776               	addwf	(character@car),w
+  1796  05BE  00F4               	movwf	(??_character+0)+0
+  1797  05BF  0874               	movf	0+(??_character+0)+0,w
+  1798  05C0  0084               	movwf	fsr0
+  1799  05C1  1383               	bcf	status, 7	;select IRP bank0
+  1800  05C2  0800               	movf	indf,w
+  1801  05C3  120A  118A  24AC   	fcall	_data
+              120A  118A         
+  1802                           	line	34
+  1803                           	
+  1804  05C8                     l2092:	
+  1805  05C8  3001               	movlw	low(01h)
+  1806  05C9  07F7               	addwf	(character@i),f
+  1807  05CA  1803               	skipnc
+  1808  05CB  0AF8               	incf	(character@i+1),f
+  1809  05CC  3000               	movlw	high(01h)
+  1810  05CD  07F8               	addwf	(character@i+1),f
+  1811                           	
+  1812  05CE                     l2094:	
+  1813  05CE  0878               	movf	(character@i+1),w
+  1814  05CF  3A80               	xorlw	80h
+  1815  05D0  00FF               	movwf	btemp+1
+  1816  05D1  3080               	movlw	(high(08h))^80h
+  1817  05D2  027F               	subwf	btemp+1,w
+  1818  05D3  1D03               	skipz
+  1819  05D4  2DD7               	goto	u2355
+  1820  05D5  3008               	movlw	low(08h)
+  1821  05D6  0277               	subwf	(character@i),w
+  1822  05D7                     u2355:
+  1823                           
+  1824  05D7  1C03               	skipc
+  1825  05D8  2DDA               	goto	u2351
+  1826  05D9  2DDB               	goto	u2350
+  1827  05DA                     u2351:
+  1828  05DA  2DBC               	goto	l2090
+  1829  05DB                     u2350:
+  1830  05DB  2DDC               	goto	l2096
+  1831                           	
+  1832  05DC                     l706:	
+  1833                           	line	36
+  1834                           	
+  1835  05DC                     l2096:	
+  1836                           ;dinogame.c: 36: _delay((unsigned long)((20)*(20000000/4000.0)));
+  1837                           	opt asmopt_off
+  1838  05DC  3082               movlw	130
+  1839  05DD  00F5               movwf	((??_character+0)+0+1),f
+  1840  05DE  30DD               	movlw	221
+  1841  05DF  00F4               movwf	((??_character+0)+0),f
+  1842  05E0                     u2587:
+  1843  05E0  0BF4               	decfsz	((??_character+0)+0),f
+  1844  05E1  2DE0               	goto	u2587
+  1845  05E2  0BF5               	decfsz	((??_character+0)+0+1),f
+  1846  05E3  2DE0               	goto	u2587
+  1847  05E4  2DE5               	nop2
+  1848                           opt asmopt_on
+  1849                           
+  1850                           	line	37
+  1851                           	
+  1852  05E5                     l707:	
+  1853  05E5  0008               	return
+  1854                           	opt stack 0
+  1855                           GLOBAL	__end_of_character
+  1856  05E6                     	__end_of_character:
+  1857 ;; =============== function _character ends ============
+  1858                           
+  1859                           	signat	_character,8312
+  1860                           	global	_data
+  1861                           psect	text179,local,class=CODE,delta=2
+  1862                           global __ptext179
+  1863  04AC                     __ptext179:
+  1864                           
+  1865 ;; *************** function _data *****************
+  1866 ;; Defined at:
+  1867 ;;		line 22 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1868 ;; Parameters:    Size  Location     Type
+  1869 ;;  data1           1    wreg     unsigned char 
+  1870 ;; Auto vars:     Size  Location     Type
+  1871 ;;  data1           1    2[COMMON] unsigned char 
+  1872 ;; Return value:  Size  Location     Type
+  1873 ;;		None               void
+  1874 ;; Registers used:
+  1875 ;;		wreg
+  1876 ;; Tracked objects:
+  1877 ;;		On entry : 0/0
+  1878 ;;		On exit  : 0/0
+  1879 ;;		Unchanged: 0/0
+  1880 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1881 ;;      Params:         0       0       0       0       0
+  1882 ;;      Locals:         1       0       0       0       0
+  1883 ;;      Temps:          2       0       0       0       0
+  1884 ;;      Totals:         3       0       0       0       0
+  1885 ;;Total ram usage:        3 bytes
+  1886 ;; Hardware stack levels used:    1
+  1887 ;; This function calls:
+  1888 ;;		Nothing
+  1889 ;; This function is called by:
+  1890 ;;		_character
+  1891 ;;		_main
+  1892 ;;		_score
+  1893 ;;		_jump
+  1894 ;;		_stop
+  1895 ;; This function uses a non-reentrant model
+  1896 ;;
+  1897                           psect	text179
+  1898                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1899                           	line	22
+  1900                           	global	__size_of_data
+  1901  0015                     	__size_of_data	equ	__end_of_data-_data
+  1902                           	
+  1903  04AC                     _data:	
+  1904                           	opt	stack 6
+  1905                           ; Regs used in _data: [wreg]
+  1906                           ;data@data1 stored from wreg
+  1907  04AC  00F2               	movwf	(data@data1)
+  1908                           	line	23
+  1909                           	
+  1910  04AD                     l2074:	
+  1911                           ;dinogame.c: 23: RC0 = 1;
+  1912  04AD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1913  04AE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1914  04AF  1407               	bsf	(56/8),(56)&7
+  1915                           	line	24
+  1916                           ;dinogame.c: 24: RC1 = 0;
+  1917  04B0  1087               	bcf	(57/8),(57)&7
+  1918                           	line	25
+  1919                           ;dinogame.c: 25: RC2 = 1;
+  1920  04B1  1507               	bsf	(58/8),(58)&7
+  1921                           	line	26
+  1922                           	
+  1923  04B2                     l2076:	
+  1924                           ;dinogame.c: 26: PORTD = data1;
+  1925  04B2  0872               	movf	(data@data1),w
+  1926  04B3  0088               	movwf	(8)	;volatile
+  1927                           	line	27
+  1928                           ;dinogame.c: 27: _delay((unsigned long)((20)*(20000000/4000.0)));
+  1929                           	opt asmopt_off
+  1930  04B4  3082               movlw	130
+  1931  04B5  00F1               movwf	((??_data+0)+0+1),f
+  1932  04B6  30DD               	movlw	221
+  1933  04B7  00F0               movwf	((??_data+0)+0),f
+  1934  04B8                     u2597:
+  1935  04B8  0BF0               	decfsz	((??_data+0)+0),f
+  1936  04B9  2CB8               	goto	u2597
+  1937  04BA  0BF1               	decfsz	((??_data+0)+0+1),f
+  1938  04BB  2CB8               	goto	u2597
+  1939  04BC  2CBD               	nop2
+  1940                           opt asmopt_on
+  1941                           
+  1942                           	line	28
+  1943                           	
+  1944  04BD                     l2078:	
+  1945                           ;dinogame.c: 28: RC2 = 0;
+  1946  04BD  1283               	bcf	status, 5	;RP0=0, select bank0
+  1947  04BE  1303               	bcf	status, 6	;RP1=0, select bank0
+  1948  04BF  1107               	bcf	(58/8),(58)&7
+  1949                           	line	29
+  1950                           	
+  1951  04C0                     l702:	
+  1952  04C0  0008               	return
+  1953                           	opt stack 0
+  1954                           GLOBAL	__end_of_data
+  1955  04C1                     	__end_of_data:
+  1956 ;; =============== function _data ends ============
+  1957                           
+  1958                           	signat	_data,4216
+  1959                           	global	_cmd
+  1960                           psect	text180,local,class=CODE,delta=2
+  1961                           global __ptext180
+  1962  0497                     __ptext180:
+  1963                           
+  1964 ;; *************** function _cmd *****************
+  1965 ;; Defined at:
+  1966 ;;		line 13 in file "F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1967 ;; Parameters:    Size  Location     Type
+  1968 ;;  command         1    wreg     unsigned char 
+  1969 ;; Auto vars:     Size  Location     Type
+  1970 ;;  command         1    2[COMMON] unsigned char 
+  1971 ;; Return value:  Size  Location     Type
+  1972 ;;		None               void
+  1973 ;; Registers used:
+  1974 ;;		wreg
+  1975 ;; Tracked objects:
+  1976 ;;		On entry : 0/0
+  1977 ;;		On exit  : 0/0
+  1978 ;;		Unchanged: 0/0
+  1979 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1980 ;;      Params:         0       0       0       0       0
+  1981 ;;      Locals:         1       0       0       0       0
+  1982 ;;      Temps:          2       0       0       0       0
+  1983 ;;      Totals:         3       0       0       0       0
+  1984 ;;Total ram usage:        3 bytes
+  1985 ;; Hardware stack levels used:    1
+  1986 ;; This function calls:
+  1987 ;;		Nothing
+  1988 ;; This function is called by:
+  1989 ;;		_character
+  1990 ;;		_main
+  1991 ;;		_score
+  1992 ;;		_jump
+  1993 ;;		_stop
+  1994 ;; This function uses a non-reentrant model
+  1995 ;;
+  1996                           psect	text180
+  1997                           	file	"F:\MPLAB WORK SPACE\hitech c\dino game\dinogame.c"
+  1998                           	line	13
+  1999                           	global	__size_of_cmd
+  2000  0015                     	__size_of_cmd	equ	__end_of_cmd-_cmd
+  2001                           	
+  2002  0497                     _cmd:	
+  2003                           	opt	stack 6
+  2004                           ; Regs used in _cmd: [wreg]
+  2005                           ;cmd@command stored from wreg
+  2006  0497  00F2               	movwf	(cmd@command)
+  2007                           	line	14
+  2008                           	
+  2009  0498                     l2068:	
+  2010                           ;dinogame.c: 14: RC0 = 0;
+  2011  0498  1283               	bcf	status, 5	;RP0=0, select bank0
+  2012  0499  1303               	bcf	status, 6	;RP1=0, select bank0
+  2013  049A  1007               	bcf	(56/8),(56)&7
+  2014                           	line	15
+  2015                           ;dinogame.c: 15: RC1 = 0;
+  2016  049B  1087               	bcf	(57/8),(57)&7
+  2017                           	line	16
+  2018                           ;dinogame.c: 16: RC2 = 1;
+  2019  049C  1507               	bsf	(58/8),(58)&7
+  2020                           	line	17
+  2021                           	
+  2022  049D                     l2070:	
+  2023                           ;dinogame.c: 17: PORTD = command;
+  2024  049D  0872               	movf	(cmd@command),w
+  2025  049E  0088               	movwf	(8)	;volatile
+  2026                           	line	18
+  2027                           ;dinogame.c: 18: _delay((unsigned long)((20)*(20000000/4000.0)));
+  2028                           	opt asmopt_off
+  2029  049F  3082               movlw	130
+  2030  04A0  00F1               movwf	((??_cmd+0)+0+1),f
+  2031  04A1  30DD               	movlw	221
+  2032  04A2  00F0               movwf	((??_cmd+0)+0),f
+  2033  04A3                     u2607:
+  2034  04A3  0BF0               	decfsz	((??_cmd+0)+0),f
+  2035  04A4  2CA3               	goto	u2607
+  2036  04A5  0BF1               	decfsz	((??_cmd+0)+0+1),f
+  2037  04A6  2CA3               	goto	u2607
+  2038  04A7  2CA8               	nop2
+  2039                           opt asmopt_on
+  2040                           
+  2041                           	line	19
+  2042                           	
+  2043  04A8                     l2072:	
+  2044                           ;dinogame.c: 19: RC2 = 0;
+  2045  04A8  1283               	bcf	status, 5	;RP0=0, select bank0
+  2046  04A9  1303               	bcf	status, 6	;RP1=0, select bank0
+  2047  04AA  1107               	bcf	(58/8),(58)&7
+  2048                           	line	20
+  2049                           	
+  2050  04AB                     l699:	
+  2051  04AB  0008               	return
+  2052                           	opt stack 0
+  2053                           GLOBAL	__end_of_cmd
+  2054  04AC                     	__end_of_cmd:
+  2055 ;; =============== function _cmd ends ============
+  2056                           
+  2057                           	signat	_cmd,4216
+  2058                           psect	text181,local,class=CODE,delta=2
+  2059                           global __ptext181
+  2060  0000                     __ptext181:
+  2061                           	global	btemp
+  2062  007E                     	btemp set 07Eh
+  2063                           
+  2064                           	DABS	1,126,2	;btemp
+  2065                           	global	wtemp0
+  2066  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.81 build 7503 
+Symbol Table                                                                                   Tue Sep 24 05:06:35 2019
+
+                   _c 0066                     _i 0068                     _k 006A                     pc 0002  
+                  fsr 0004                   l702 04C0                   l720 07C3                   l705 05BC  
+                 l721 07EF                   l706 05DC                   l730 0680                   l722 07FB  
+                 l707 05E5                   l731 067F                   l723 07FC                   l740 0560  
+                 l732 068D                   l724 07FD                   l741 058E                   l733 068C  
+                 l725 07FD                   l742 058F                   l734 068D                   l718 074E  
+                 l743 058F                   l719 075A                   l744 0590                   l728 0605  
+                 l737 053E                   l745 0590                   l729 0626                   l699 04AB  
+                 _RC0 0038                   _RC1 0039                   _RC2 003A                   _RC3 003B  
+                 _cmd 0497                   fsr0 0004                   indf 0000                  l2100 0511  
+                l2110 0535                  l2102 051D                  l2112 053E                  l2104 0523  
+                l2120 0551                  l2200 0737                  l2106 0529                  l2130 0580  
+                l2122 055F                  l2114 053F                  l2210 075A                  l2202 073D  
+                l2108 052F                  l2124 0560                  l2116 054B                  l2140 0604  
+                l2132 05E6                  l2220 0783                  l2212 075F                  l2204 0741  
+                l2070 049D                  l2126 056D                  l2118 054F                  l2150 062C  
+                l2142 0605                  l2134 05EE                  l2230 07AE                  l2222 0789  
+                l2214 0765                  l2206 074E                  l2072 04A8                  l2080 0592  
+                l2128 057A                  l2160 066F                  l2152 063B                  l2144 0612  
+                l2136 05F4                  l2240 07D2                  l2232 07B4                  l2224 0793  
+                l2216 076F                  l2208 0754                  l2074 04AD                  l2090 05BC  
+                l2082 05A2                  l2162 0675                  l2154 0650                  l2146 0618  
+                l2138 05F6                  l2250 07F5                  l2242 07DE                  l2234 07B9  
+                l2226 0799                  l2218 0775                  l2170 0692                  ?_cmd 0070  
+                l2068 0498                  l2076 04B2                  l2092 05C8                  l2084 05AB  
+                l2164 067C                  l2156 065C                  l2148 0626                  l2244 07E2  
+                l2236 07BF                  l2228 07A1                  l2180 06D1                  l2172 0693  
+                l2078 04BD                  l2094 05CE                  l2086 05AD                  l2166 0686  
+                l2158 066B                  l2246 07E8                  l2238 07C3                  l2190 0719  
+                l2182 06E8                  l2174 06AA                  l2088 05BB                  l2096 05DC  
+                l2248 07EF                  l2192 071F                  l2184 06F2                  l2176 06B1  
+                l2168 068E                  l2098 04F9                  l2194 0725                  l2186 0709  
+                l2178 06C8                  l2196 072B                  l2188 0713                  l2198 0731  
+                STR_1 0009                  STR_2 001E                  STR_3 0014                  u2400 066B  
+                u2401 066A                  u2410 067C                  u2411 067B                  u2340 05BA  
+                u2420 0686                  u2500 07D2                  u2341 05B9                  u2421 0685  
+                u2405 0667                  u2501 07D1                  u2350 05DB                  u2510 07F5  
+                u2430 069D                  u2351 05DA                  u2335 0595                  u2511 07F4  
+                u2360 055E                  u2440 06BB                  u2345 05B6                  u2361 055D  
+                u2505 07CE                  u2370 058D                  u2450 06DB                  u2355 05D7  
+                u2371 058C                  u2380 0603                  u2460 06FC                  u2365 055A  
+                u2381 0602                  u2390 0625                  u2470 0754                  u2607 04A3  
+                u2375 0589                  u2391 0624                  u2471 0753                  u2527 0747  
+                u2480 07AE                  u2385 05FF                  u2481 07AD                  u2537 077D  
+                u2490 07B4                  u2547 0656                  u2395 0621                  u2491 07B3  
+                u2557 0573                  u2485 07AA                  u2567 0517                  u2577 05A6  
+                u2587 05E0                  u2597 04B8                  _data 04AC                  _main 068E  
+                _jump 04F9                  btemp 007E                  _stop 053F                  start 0000  
+               ??_cmd 0070                 ?_data 0070                 ?_main 0070                 ?_jump 0070  
+               ?_stop 0070                 _PORTD 0008                 _TRISC 0087                 _TRISD 0088  
+               _score 05E6                 main@i 0044                 pclath 000A                 stop@i 0077  
+               status 0003                 wtemp0 007E          __end_of_data 04C1          __end_of_main 0800  
+        __end_of_jump 053F          __end_of_stop 0591                ??_data 0070                ??_main 0020  
+              ??_jump 0073                ??_stop 0073                ?_score 0070                _TRISC3 043B  
+              score@j 007B        __pcstackCOMMON 0070          __pidataBANK0 04C1    __size_of_character 0055  
+       __end_of_score 068E               ??_score 0076            __pbssBANK0 005E            __pmaintext 068E  
+          cmd@command 0072     __end_of_character 05E6            character@i 0077          __size_of_cmd 0015  
+             main@arr 0024  end_of_initialization 04F5               init_ram 048A   start_initialization 04D9  
+         __end_of_cmd 04AC           __pdataBANK0 0046         __pcstackBANK0 0020             _character 0591  
+           __ptext180 0497             __ptext181 0000             __ptext175 05E6             __ptext176 053F  
+           __ptext177 04F9             __ptext178 0591             __ptext179 04AC          character@car 0076  
+           __pstrings 0003             data@data1 0072        __size_of_score 00A8            ?_character 0073  
+           main@F1103 0046             main@F1105 004E             main@F1107 0056             main@F1109 005E  
+         __stringbase 0008     character@location 0073             init_fetch 0486             score@name 0079  
+       __size_of_data 0015         __size_of_main 0172         __size_of_jump 0046         __size_of_stop 0052  
+         ??_character 0074              main@arr1 002C              main@arr2 0034              main@arr3 003C  
+            score@num 007A             stringcode 0003              stop@stop 0076              stringdir 0003  
+            stringtab 0003  

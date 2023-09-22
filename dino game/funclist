@@ -1,0 +1,8 @@
+_jump: CODE, 1273 0 70
+_stop: CODE, 1343 0 82
+_main: CODE, 1678 0 370
+_score: CODE, 1510 0 168
+_data: CODE, 1196 0 21
+_cmd: CODE, 1175 0 21
+_character: CODE, 1425 0 85
+Total: 817
